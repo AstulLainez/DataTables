@@ -24,6 +24,10 @@ namespace DataTables.Controllers
         {
             return View(await _context.Usuarios.ToListAsync());
         }
+        public async Task<IActionResult> Usuario1()
+        {
+            return View(await _context.Usuarios.ToListAsync());
+        }
 
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)

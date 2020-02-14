@@ -8,14 +8,29 @@
 @section Scripts{
     @*script for datatables js.*@
     @*script to initialize datatable.*@
-
-    <link href="https://code.jquery.com/jquery-3.3.1.js" rel="stylesheet" />
+    <script src="~/lib/datatables/jquery/jquery-3.3.1.min.js"></script>
     <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
     <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
 
     <script>
         $(document).ready(function () {
-            $('#studentTable').DataTable();//studentTable is the id of the table to be displayed as dataTable
+            $('#studentTable').DataTable({//studentTable is the id of the table to be displayed as dataTable
+                language: {
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No se encontraron resultados",
+                    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sSearch": "Buscar:",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "sProcessing": "Procesando...",
+                }
+            });
         });
     </script>
 }
@@ -79,9 +94,9 @@
                                         @Html.DisplayFor(modelItem => item.Salario)
                                     </td>
                                     <td>
-                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                        <a class="btn btn-success" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                                     </td>
                                 </tr>
                             }
@@ -93,3 +108,4 @@
     </div>
 
 </body>
+

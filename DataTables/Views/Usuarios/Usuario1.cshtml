@@ -1,33 +1,39 @@
 ﻿@model IEnumerable<DataTables.Data.Entities.Usuario>
+
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Usuario1";
 }
+
+
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="#" />
-    <title>Tutorial DataTables</title>
+         @*Required meta tags*@
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="#" />
+        <title>Tutorial DataTables</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="~/lib/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
-    @*<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">*@
-    <!-- CSS personalizado -->
-    <link href="~/css/main.css" rel="stylesheet" />
+        @*Bootstrap CSS*@
+        <link href="~/lib/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        @* CSS personalizado*@
+        <link href="~/css/main.css" rel="stylesheet" />
 
-    <!--datables CSS básico-->
-    <link href="~/lib/datatables/otroejem/datatables.min.css" rel="stylesheet" />
-    <!--datables estilo bootstrap 4 CSS-->
-    <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <!--font awesome con CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        @*datables CSS básico*@
+        <link href="~/lib/datatables/otroejem/datatables.min.css" rel="stylesheet" />
+       @* datables estilo bootstrap 4 CSS*@
+        <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+       @* font awesome con CDN*@
+@*<link href="~/lib/datatables/font-awesome/css/font-awesome.min.css" rel="stylesheet" />*@
 
-</head>
+        @*<script src="https://kit.fontawesome.com/d77e8e54bc.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet"
+                  href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+                  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">*@
 
+    </head>
 <body>
     <header>
         <h1 class="text-center text-light">DATATABLES</h1>
-        <h2 class="text-center text-light">Cómo <span class="badge badge-warning">Personalizar</span></h2>
     </header>
     <div style="height:50px"></div>
 
@@ -85,9 +91,9 @@
                                         @Html.DisplayFor(modelItem => item.Salario)
                                     </td>
                                     <td>
-                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a class="btn btn-success" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                                     </td>
                                 </tr>
                             }
@@ -98,20 +104,20 @@
         </div>
     </div>
 
-    <!-- jQuery, Popper.js, Bootstrap JS -->
-    <script src="~/lib/datatables/jquery/jquery-3.3.1.min.js"></script>
-    <script src="~/lib/datatables/otroejem/popper/popper.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    @*jQuery, Popper.js, Bootstrap JS*@
+        <script src="~/lib/datatables/jquery/jquery-3.3.1.min.js"></script>
+        <script src="~/lib/datatables/otroejem/popper/popper.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- datatables JS -->
-    <script src="~/lib/datatables/otroejem/datatables.min.js"></script>
+         @*datatables JS*@
+        <script src="~/lib/datatables/otroejem/datatables.min.js"></script>
 
-    <!-- para usar botones en datatables JS -->
-    <script src="~/lib/datatables/otroejem/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>
-    <script src="~/lib/datatables/otroejem/JSZip-2.5.0/jszip.min.js"></script>
-    <script src="~/lib/datatables/otroejem/pdfmake-0.1.36/pdfmake.min.js"></script>
-    <script src="~/lib/datatables/otroejem/pdfmake-0.1.36/vfs_fonts.js"></script>
-    <script src="~/lib/datatables/otroejem/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+         @*para usar botones en datatables JS*@
+        <script src="~/lib/datatables/otroejem/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>
+        <script src="~/lib/datatables/otroejem/JSZip-2.5.0/jszip.min.js"></script>
+        <script src="~/lib/datatables/otroejem/pdfmake-0.1.36/pdfmake.min.js"></script>
+        <script src="~/lib/datatables/otroejem/pdfmake-0.1.36/vfs_fonts.js"></script>
+        <script src="~/lib/datatables/otroejem/Buttons-1.5.6/js/buttons.html5.min.js"></script>
 
     <!-- código JS propìo-->
     <script src="~/js/main.js"></script>
