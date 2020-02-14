@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataTables.Data;
 using DataTables.Data.Entities;
+using Rotativa.AspNetCore;
 
 namespace DataTables.Controllers
 {
@@ -27,6 +28,14 @@ namespace DataTables.Controllers
         public async Task<IActionResult> Usuario1()
         {
             return View(await _context.Usuarios.ToListAsync());
+        }
+        // GET: Customers/ContactPDF
+        public async Task<IActionResult> ReportePDF()
+        {
+            return new ViewAsPdf("ReportePDF", await _context.Usuarios.ToListAsync())
+            {
+                // ...
+            };
         }
 
         // GET: Usuarios/Details/5

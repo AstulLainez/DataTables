@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Rotativa.AspNetCore;
 
 namespace DataTables
 {
@@ -64,6 +65,10 @@ namespace DataTables
                     name: "default",
                     template: "{controller=Usuarios}/{action=Index}/{id?}");
             });
+            // visto en http://www.rafaelacosta.net/Blog/2019/3/21/cómo-crear-un-pdf-a-partir-de-una-vista-en-aspnet-core-mvc 
+            // corregido gracias a https://www.youtube.com/watch?v=68YcKP0g1XA
+
+            RotativaConfiguration.Setup(env);
         }
     }
 }
